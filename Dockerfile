@@ -14,4 +14,6 @@ WORKDIR /app/web-server
 
 RUN npm install
 
+EXPOSE 3000/tcp
+
 CMD ["npm", "run", "dev"]
