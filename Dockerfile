@@ -1,11 +1,17 @@
 FROM emscripten/emsdk:latest
 
-RUN apt-get update
+RUN apt-get update --allow-insecure-repositories
 
-RUN apt-get install -y python3 python3-pip ninja-build build-essential cmake clang-14 libboost-all-dev
+RUN apt-get install -y --allow-unauthenticated build-essential cmake clang-14 libboost-all-dev
 
-COPY . /wasm
+COPY . /app
 
-WORKDIR /wasm
+WORKDIR /app/native-code
 
-RUN conan install . -if ./build && conan build -bf ./build
+RUN sh build.sh
+
+WORKDIR /app/web-server
+
+RUN npm install
+
+CMD ["npm", "run", "dev"]
