@@ -11,8 +11,10 @@ class WasmDemoConan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
-    generators = "cmake", "cmake_find_package"
-    export_sources = "CMakeLists.txt", "main.cpp"
+    generators = "cmake_find_package"
+    exports_sources = "CMakeLists.txt", "main.cpp"
+
+    build_requires = ("emsdk/3.1.29",)
 
     def build(self):
         cmake = CMake(self)
@@ -20,8 +22,7 @@ class WasmDemoConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*.h", dst="include", src="hello")
-        self.copy("*hello.lib", dst="lib", keep_path=False)
+        self.copy("*.h", dst="include")
         self.copy("*.dll", dst="bin", keep_path=False)
         self.copy("*.so", dst="lib", keep_path=False)
         self.copy("*.dylib", dst="lib", keep_path=False)

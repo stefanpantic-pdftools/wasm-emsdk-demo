@@ -1,3 +1,0 @@
-/home/stefan/wasm_presentation/build/CMakeFiles/edit_cache.dir
-/home/stefan/wasm_presentation/build/CMakeFiles/rebuild_cache.dir
-/home/stefan/wasm_presentation/build/CMakeFiles/wasm-demo.dir

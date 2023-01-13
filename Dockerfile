@@ -6,4 +6,4 @@ RUN apt-get install -y python3 python3-pip ninja-build build-essential cmake cla
 
 RUN pip3 install conan
 
-RUN conan init
+RUN conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/public-conan

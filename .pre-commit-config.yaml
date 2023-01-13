@@ -1,0 +1,21 @@
+﻿# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: local
+    hooks:
+    - id: black
+      name: black
+      entry: black
+      language: python
+      types: [python]
+      additional_dependencies: [black==21.8b0, click==8.0.4]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+    - id: flake8
+      types: [python]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.11.2
+    hooks:
+      - id: isort
+        name: isort (python)

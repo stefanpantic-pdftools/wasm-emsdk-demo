@@ -1,4 +1,5 @@
 #include <iostream>
+#include <emscripten/emscripten.h>
 
 
 int main()
