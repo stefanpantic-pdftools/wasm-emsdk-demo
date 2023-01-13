@@ -1,0 +1,18 @@
+{
+ "options": [
+  [
+   "fPIC",
+   "True"
+  ],
+  [
+   "shared",
+   "False"
+  ]
+ ],
+ "root": {
+  "name": "wasm-demo",
+  "version": "1.0.0",
+  "user": null,
+  "channel": null
+ }
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++    -m64 -O3 -DNDEBUG        CMakeFiles/wasm-demo.dir/main.cpp.o  -o bin/wasm-demo 
