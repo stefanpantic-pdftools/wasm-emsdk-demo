@@ -1,9 +1,11 @@
-FROM ubuntu:latest
+FROM emscripten/emsdk:latest
 
-RUN apt-get update --allow-insecure-repositories
+RUN apt-get update
 
-RUN apt-get install -y python3 python3-pip ninja-build build-essential cmake clang
+RUN apt-get install -y python3 python3-pip ninja-build build-essential cmake clang-14 libboost-all-dev
 
-RUN pip3 install conan
+COPY . /wasm
 
-RUN conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/public-conan
+WORKDIR /wasm
+
+RUN conan install . -if ./build && conan build -bf ./build
