@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Demo Web App that runs WASM code.",
   "scripts": {
-    "dev": "npx live-server --port=3000"
+    "docker": "npx live-server --port=3000",
+    "dev": "npx live-server --host=localhost --port=3000"
   },
   "author": "Stefan Pantic",
   "license": "MIT",

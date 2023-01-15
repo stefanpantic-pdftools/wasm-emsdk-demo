@@ -2,8 +2,6 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
 
 project(native-code)
 
-set(CMAKE_BUILD_TYPE Debug)
-
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
 add_executable(${PROJECT_NAME} main.cpp)
