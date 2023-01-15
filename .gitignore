@@ -230,6 +230,9 @@ js-math.wasm
 js-val.js
 js-val.wasm
 
+js-dwarf.js
+js-dwarf.wasm
+
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 # End of https://www.toptal.com/developers/gitignore/api/conan,c++,cmake

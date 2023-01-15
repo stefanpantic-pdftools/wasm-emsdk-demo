@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WASM Demo App</title>
+</head>
+
+<body>
+  <main>
+    <script>
+      class Equation {
+        constructor(numbers)
+        {
+          this.result = null;
+          this.numbers = numbers;
+        }
+
+        set_result(result) {
+            this.result = result;
+        }
+
+        to_string() {
+            return "Equation result is: " + this.result
+        }
+      }
+
+      var Module = {
+        onRuntimeInitialized: function () {
+          var equation = new Equation([1, 2, 3, 4, 5]);
+          document.getElementById("main-div").innerHTML = equation.to_string() + '\n';
+
+          Module.CalculateEquationResult(equation)
+          document.getElementById("cpp-div").innerHTML = 'C++ calculated: ' + equation.to_string() + '\n';
+        }
+      };
+    </script>
+    <div id="main-div"></div>
+    <div id="ex-div">Expected equation result to be 3413.</div>
+    <div id="cpp-div"></div>
+  </main>
+  <script src="js-dwarf.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,10 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
 
-project(js-math)
+project(js-dwarf)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
-add_executable(${PROJECT_NAME} js_math.cpp)
+add_executable(${PROJECT_NAME} js_dwarf.cpp)
 
 target_compile_options(${PROJECT_NAME} PRIVATE
     "SHELL:-s DISABLE_EXCEPTION_CATCHING=0"
@@ -30,6 +30,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     SUFFIX ".js"
 )
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/js-math.js
-              ${CMAKE_CURRENT_BINARY_DIR}/js-math.wasm
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/js-dwarf.js
+              ${CMAKE_CURRENT_BINARY_DIR}/js-dwarf.wasm
         DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/../web-server)

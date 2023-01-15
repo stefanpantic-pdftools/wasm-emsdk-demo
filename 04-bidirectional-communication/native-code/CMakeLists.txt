@@ -16,7 +16,6 @@ target_link_options(${PROJECT_NAME} PRIVATE
     "SHELL:-s DISABLE_EXCEPTION_CATCHING=0"
     "SHELL:-s ENVIRONMENT=web"
     "SHELL:-s FETCH=1"
-    "SHELL:-s EXPORTED_RUNTIME_METHODS=\"['euclidean_distance_2d']\""
     "SHELL:-s LZ4=1"
     "SHELL:-s NO_EXIT_RUNTIME=1"
     "SHELL:-s WARN_ON_UNDEFINED_SYMBOLS=1"
