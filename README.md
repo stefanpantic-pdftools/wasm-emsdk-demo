@@ -14,3 +14,6 @@ The following code samples are included in this repo:
 2. [Run C++ code in a browser window](02-run-cpp-in-browser)
 3. [Call C++ code directly from JavaScript code](03-call-cpp-from-js)
 4. [Bidirectional communication between C++ and JavaScript](04-bidirectional-communication)
+5. [Debug C++/WASM code using symbol maps](05-symbol-maps)
+6. [Debug C++/WASM code using DWARF symbols](06-dwarf-symbols)
+
