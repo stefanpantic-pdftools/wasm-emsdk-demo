@@ -224,6 +224,12 @@ dist
 native-code.js
 native-code.wasm
 
+js-math.js
+js-math.wasm
+
+js-val.js
+js-val.wasm
+
 # End of https://www.toptal.com/developers/gitignore/api/node
 
 # End of https://www.toptal.com/developers/gitignore/api/conan,c++,cmake

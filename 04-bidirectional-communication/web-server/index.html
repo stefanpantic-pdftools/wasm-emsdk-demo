@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WASM Demo App</title>
+</head>
+
+<body>
+  <main>
+    <script>
+      class Ping {
+        constructor()
+        {
+          this.cpp = false;
+          this.js = false;
+        }
+
+        ping_cpp() {
+            this.cpp = true;
+        }
+
+        ping_js() {
+            this.js = true;
+        }
+
+        to_string() {
+            return "C++: " + this.cpp + " JS: " + this.js
+        }
+      }
+
+      var Module = {
+        onRuntimeInitialized: function () {
+          var ping = new Ping()
+          document.getElementById("main-div").innerHTML = '<b>Ping</b> status before any calls: ' + ping.to_string() + '\n';
+
+          ping.ping_js();
+          document.getElementById("js-div").innerHTML = '<b>Ping</b> status after call from JS: ' + ping.to_string() + '\n';
+
+          Module.PingCpp(ping)
+          document.getElementById("cpp-div").innerHTML = '<b>Ping</b> status after call from C++: ' + ping.to_string() + '\n';
+        }
+      };
+    </script>
+    <div id="main-div"></div>
+    <div id="js-div"></div>
+    <div id="cpp-div"></div>
+  </main>
+  <script src="js-val.js"></script>
+</body>
+
+</html>

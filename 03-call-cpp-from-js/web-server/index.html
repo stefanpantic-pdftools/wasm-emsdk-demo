@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WASM Demo App</title>
+</head>
+
+<body>
+  <main>
+    <script>
+      var Module = {
+        onRuntimeInitialized: function () {
+          var a = new Module.Point(5, 5);
+          var b = new Module.Point(0, 0);
+          var dist = Module.EuclideanDistance2D(a, b);
+
+          document.getElementById("main-div").innerHTML = 
+                  'Euclidean distance between ' + a.ToString() + ' and ' + b.ToString() + ' is: ' + dist + ".";
+
+          a.delete();
+          b.delete();
+        }
+      };
+    </script>
+    <div id="main-div"></div>
+  </main>
+  <script src="js-math.js">
+  </script>
+</body>
+
+</html>

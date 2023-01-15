@@ -14,13 +14,12 @@ target_compile_options(${PROJECT_NAME} PRIVATE
 target_link_options(${PROJECT_NAME} PRIVATE
     "SHELL:-s ALLOW_MEMORY_GROWTH=1"
     "SHELL:-s DISABLE_EXCEPTION_CATCHING=0"
-    "SHELL:-s ENVIRONMENT=worker,web,node,webview"
+    "SHELL:-s ENVIRONMENT=web"
     "SHELL:-s FETCH=1"
     "SHELL:-s LZ4=1"
     "SHELL:-s NO_EXIT_RUNTIME=1"
     "SHELL:-s WARN_ON_UNDEFINED_SYMBOLS=1"
     "SHELL:-s DYNAMIC_EXECUTION=0"
-    "SHELL:-s ASYNCIFY"
     $<$<CONFIG:Debug>:-g>
 )
 
