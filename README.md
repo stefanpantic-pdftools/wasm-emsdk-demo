@@ -3,7 +3,7 @@
 This repository contains code samples for several use cases of the Emscripten framework.
 
 Emscripten contains several facilities which enable seamless integration of C++ native code into JavaScript web application
-using WebAssembly. Emscripten includes a compiler (`emcc` and `em++`) which compile LLVM bytecode into WebAssembly, a library which enables creation and usage of native JavaScript objects directly inside C++ code, as well as facilities for exposing C++ functions to JavaScript via a JNI like interface called Embind.
+using WebAssembly. Emscripten includes a compiler (`emcc` and `em++`) which compiles LLVM code into WebAssembly, a library which enables creation and usage of native JavaScript objects directly inside C++ code, as well as facilities for exposing C++ functions to JavaScript via a JNI like interface called Embind. Emscripten also includes `emcmake`, a CMake wrapper which enables full usage of existing CMake build files.
 
 For more info on Emscripten visit [emscripten.org](https://emscripten.org/).
 
